@@ -1,0 +1,7 @@
+.idea
+.gradle
+.allure
+build
+out
+allure-results
+.DS_Store
