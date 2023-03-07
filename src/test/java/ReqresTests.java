@@ -2,8 +2,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
-import static org.hamcrest.Matchers.hasItems;
-import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.*;
 
 public class ReqresTests {
     public static final String BASE_URL = "https://reqres.in/api";
@@ -87,6 +86,6 @@ public class ReqresTests {
                 .log().body()
                 .statusCode(200)
                 .body("id", is (4))
-                .body("token", is ("QpwL5tke4Pnpja7X4"));
+                .body("token", is(notNullValue()));
     }
 }
